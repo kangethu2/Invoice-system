@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<title>jQuery PasswordValidation Plugin Demo</title>
+<link href="https://bootswatch.com/darkly/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<form method="post">
+<div class="container">
+<h1>jQuery PasswordValidation Plugin Demo</h1>
+	<label>Password: </label><input id="myPassword" type="password" class="form-control">
+    
+	<label>Verify Password: </label><input id="myConfirmPassword" type="password" class="form-control">
+    <div id="errors" class="well"></div>
+</div>
+<input type="submit" Value="submit" />
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="jquery.password-validation.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#myPassword").passwordValidation({"confirmField": "#myConfirmPassword"}, function(element, valid, match, failedCases) {
+
+		    $("#errors").html("<pre>" + failedCases.join("\n") + "</pre>");
+		  
+		     if(valid) $(element).css("border","2px solid green");
+		     if(!valid) $(element).css("border","2px solid red");
+		     if(valid && match) $("#myConfirmPassword").css("border","2px solid green");
+		     if(!valid || !match) $("#myConfirmPassword").css("border","2px solid red");
+		});
+	});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
