@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>eINVOICE</title>
+    <title>eINVOICE Portal</title>
     <!--GOOGLE FONT -->
     <link rel="shortcut icon" href="logo/logo4.jpg" type="image/x-icon">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
